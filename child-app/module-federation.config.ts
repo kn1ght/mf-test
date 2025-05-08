@@ -1,5 +1,8 @@
 export const mfConfig = {
   name: "child_app",
-  exposes: {},
+  filename: "remoteEntry.js",
+  exposes: {
+    "./VueApp": "./src/App.vue",
+  },
   shared: ["vue"],
 };
