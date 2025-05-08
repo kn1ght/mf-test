@@ -1,5 +1,4 @@
 import React, { useEffect, useRef } from "react";
-import { createApp } from "vue";
 
 const VueAppWrapper: React.FC = () => {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -7,9 +6,9 @@ const VueAppWrapper: React.FC = () => {
   useEffect(() => {
     const loadVueApp = async () => {
       try {
-        const VueApp = (await import("child_app/VueApp")).default;
+        const VueAppLoader = await import("child_app/VueApp");
         if (containerRef.current) {
-          const app = createApp(VueApp);
+          const app = VueAppLoader.default();
           app.mount(containerRef.current);
         }
       } catch (error) {

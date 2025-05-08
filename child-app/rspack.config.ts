@@ -4,8 +4,6 @@ import { rspack } from "@rspack/core";
 import { ModuleFederationPlugin } from "@module-federation/enhanced/rspack";
 import { VueLoaderPlugin } from "vue-loader";
 
-import { mfConfig } from "./module-federation.config";
-
 const isDev = process.env.NODE_ENV === "development";
 
 // Target browsers, see: https://github.com/browserslist/browserslist
@@ -79,7 +77,14 @@ export default defineConfig({
     new rspack.HtmlRspackPlugin({
       template: "./index.html",
     }),
-    new ModuleFederationPlugin(mfConfig),
+    new ModuleFederationPlugin({
+      name: "child_app",
+      filename: "remoteEntry.js",
+      exposes: {
+        "./VueApp": "./src/mf-loader.ts",
+      },
+      shared: ["vue"],
+    }),
   ].filter(Boolean),
   optimization: {
     minimizer: [
