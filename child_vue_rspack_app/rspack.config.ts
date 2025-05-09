@@ -26,7 +26,7 @@ export default defineConfig({
 
   output: {
     // You need to set a unique value that is not equal to other applications
-    uniqueName: "child_app",
+    uniqueName: "child_vue_rspack_app",
     // publicPath must be configured if using manifest
     publicPath: "http://localhost:3001/",
   },
@@ -78,7 +78,7 @@ export default defineConfig({
       template: "./index.html",
     }),
     new ModuleFederationPlugin({
-      name: "child_app",
+      name: "child_vue_rspack_app",
       filename: "remoteEntry.js",
       exposes: {
         "./VueApp": "./src/mf-loader.ts",

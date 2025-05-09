@@ -6,18 +6,18 @@ import "./index.css";
 import { useState } from "react";
 
 const App = () => {
-  const [count, setCounter] = useState(0);
+  const [count, setCount] = useState(0);
 
   return (
     <div className="text-xl p-4 mt-10 mx-auto max-w-6xl">
       <div>Name: host-app</div>
       <div>Framework: react-19</div>
       <div>count: {count}</div>
-      <button onClick={() => setCounter((prev) => prev - 1)}>-</button>
-      <button onClick={() => setCounter((prev) => prev + 1)}>+</button>
+      <button onClick={() => setCount((prev) => prev - 1)}>-</button>
+      <button onClick={() => setCount((prev) => prev + 1)}>+</button>
       <VueAppWrapper count={count} />
       <div className="border p-4 mt-10">
-        <ChildReactViteApp message={`Hello from host app, counter: ${count}`} />
+        <ChildReactViteApp message={`Hello from host app, count: ${count}`} />
       </div>
     </div>
   );

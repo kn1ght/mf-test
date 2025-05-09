@@ -9,7 +9,7 @@ function App(props: AppProps) {
 
   return (
     <>
-      <div>Name: child-react-vite-app</div>
+      <div style={{ fontWeight: "bold" }}>child_react_vite_app</div>
       {message && <div>{message}</div>}
     </>
   );

@@ -11,10 +11,10 @@ const VueAppWrapper: React.FC<VueAppWrapperProps> = (props) => {
   useEffect(() => {
     const loadVueApp = async () => {
       try {
-        const VueAppLoader = await import("child_app/VueApp");
+        const VueAppLoader = await import("child_vue_rspack_app/VueApp");
         if (containerRef.current) {
           const app = VueAppLoader.default({
-            message: `message from host app with count: ${count}`,
+            message: `Hello from host app, count: ${count}`,
           });
           app.mount(containerRef.current);
         }
