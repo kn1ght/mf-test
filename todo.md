@@ -1,0 +1,7 @@
+- pass props to child app from host app (communication)
+- add react child app with vite bundler
+- add vite child app with vite bundler
+- add routing to host app
+- add routing to child app
+- add global styles to child app
+- wrap child app with web component or shadow dom

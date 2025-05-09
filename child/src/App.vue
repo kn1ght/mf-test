@@ -1,12 +1,13 @@
 <template>
-  <div class="mt-10 text-3xl mx-auto max-w-6xl">
+  <div class="text-xl mx-auto max-w-6xl">
     <div>Name: child-app</div>
     <div>Framework: vue3</div>
+    <div v-if="message">{{ message }}</div>
   </div>
 </template>
 
-<script lang="ts">
-  import { defineComponent } from "vue";
-
-  export default defineComponent({});
+<script setup lang="ts">
+defineProps<{
+  message: string;
+}>();
 </script>

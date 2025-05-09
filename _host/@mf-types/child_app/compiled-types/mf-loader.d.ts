@@ -1,2 +1,6 @@
 import "./index.css";
-export default function getCreateApp(): import("vue").App<Element>;
+type GetCreateAppParams = {
+    message?: string;
+};
+export default function getCreateApp(params: GetCreateAppParams): import("vue").App<Element>;
+export {};

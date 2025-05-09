@@ -4,6 +4,10 @@ import "./index.css";
 
 import App from "./App.vue";
 
-export default function getCreateApp() {
-  return createApp(App);
+type GetCreateAppParams = {
+  message?: string;
+};
+
+export default function getCreateApp(params: GetCreateAppParams) {
+  return createApp(App, params);
 }
