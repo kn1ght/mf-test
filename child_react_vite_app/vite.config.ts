@@ -16,7 +16,8 @@ export default defineConfig({
     federation({
       name: "child_react_vite_app",
       exposes: {
-        "./App": "./src/App",
+        // "./App": "./src/App",
+        "./App": "./src/web-component.tsx",
       },
       filename: "remoteEntry-[hash].js",
       manifest: true,

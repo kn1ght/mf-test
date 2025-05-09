@@ -40,3 +40,8 @@
 .read-the-docs {
   color: #888;
 }
+
+/* for testing global styles with web component */
+div {
+  color: red;
+}

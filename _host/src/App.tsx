@@ -1,9 +1,10 @@
 import ReactDOM from "react-dom/client";
 import VueAppWrapper from "./components/VueAppWrapper";
-import ChildReactViteApp from "child_react_vite_app/App";
+import "child_react_vite_app/App";
 
 import "./index.css";
 import { useState } from "react";
+import ReactChildWebComponent from "./components/ReactAppWrapper";
 
 const App = () => {
   const [count, setCount] = useState(0);
@@ -13,11 +14,25 @@ const App = () => {
       <div>Name: host-app</div>
       <div>Framework: react-19</div>
       <div>count: {count}</div>
-      <button onClick={() => setCount((prev) => prev - 1)}>-</button>
-      <button onClick={() => setCount((prev) => prev + 1)}>+</button>
+      <div className="flex gap-2">
+        <button
+          className="bg-gray-700 text-white rounded-lg py-1 px-4 cursor-pointer"
+          onClick={() => setCount((prev) => prev - 1)}
+        >
+          -
+        </button>
+        <button
+          className="bg-gray-700 text-white rounded-lg py-1 px-4 cursor-pointer"
+          onClick={() => setCount((prev) => prev + 1)}
+        >
+          +
+        </button>
+      </div>
       <VueAppWrapper count={count} />
       <div className="border p-4 mt-10">
-        <ChildReactViteApp message={`Hello from host app, count: ${count}`} />
+        <ReactChildWebComponent
+          message={`Hello from host app, count: ${count}`}
+        />
       </div>
     </div>
   );
