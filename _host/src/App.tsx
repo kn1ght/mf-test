@@ -1,5 +1,6 @@
 import ReactDOM from "react-dom/client";
 import VueAppWrapper from "./components/VueAppWrapper";
+import ChildReactViteApp from "child_react_vite_app/App";
 
 import "./index.css";
 import { useState } from "react";
@@ -15,6 +16,9 @@ const App = () => {
       <button onClick={() => setCounter((prev) => prev - 1)}>-</button>
       <button onClick={() => setCounter((prev) => prev + 1)}>+</button>
       <VueAppWrapper count={count} />
+      <div className="border p-4 mt-10">
+        <ChildReactViteApp message={`Hello from host app, counter: ${count}`} />
+      </div>
     </div>
   );
 };

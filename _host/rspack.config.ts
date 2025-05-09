@@ -80,6 +80,8 @@ export default defineConfig({
       exposes: {},
       remotes: {
         child_app: "child_app@http://localhost:3001/remoteEntry.js",
+        child_react_vite_app:
+          "child_react_vite_app@http://localhost:3002/mf-manifest.json",
       },
       shared: ["react", "react-dom"],
     }),
