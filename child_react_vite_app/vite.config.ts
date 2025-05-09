@@ -19,7 +19,7 @@ export default defineConfig({
         // "./App": "./src/App",
         "./App": "./src/web-component.tsx",
       },
-      filename: "remoteEntry-[hash].js",
+      filename: "remoteEntry-[hash].js", // not needed?
       manifest: true,
       shared: {
         react: {
