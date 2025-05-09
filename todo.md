@@ -8,6 +8,7 @@
 - understand why hmr doesn't work in host app for `child_react_vite_app`
 
 - build host app!!!
+  https://chatgpt.com/share/681dec48-3a04-8000-8028-4b6632e40db2
 - add vite child app with vite bundler
 - add routing to host app
 - add routing to child app

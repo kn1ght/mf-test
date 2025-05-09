@@ -29,6 +29,7 @@ export default defineConfig({
           singleton: true,
         },
       },
+      // library: { type: "global", name: "child_react_vite_app" }, // not sure what it is
     }),
     react(),
   ],

@@ -84,6 +84,7 @@ export default defineConfig({
         "./VueApp": "./src/mf-loader.ts",
       },
       shared: ["vue"],
+      // library: { type: "global", name: "child_vue_rspack_app" }, // not sure what it is
     }),
   ].filter(Boolean),
   optimization: {
