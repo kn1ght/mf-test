@@ -1,3 +1,11 @@
+To make `next.js` as a host app:
+
+- install `webpack` as a dependency `npm i webpack`
+- run and build with `NEXT_PRIVATE_LOCAL_WEBPACK=true`
+  example: `NEXT_PRIVATE_LOCAL_WEBPACK=true next dev --port 3003`
+- use this config
+
+```ts
 import NextFederationPlugin from "@module-federation/nextjs-mf";
 import type { NextConfig } from "next";
 
@@ -17,16 +25,8 @@ const nextConfig: NextConfig = {
           },
           filename: "static/chunks/remoteEntry.js",
           extraOptions: {
-            skipSharingNextInternals: true, // prevents error in runtime `Invalid hook call...`
+            skipSharingNextInternals: true, // prevents error in runtime
           },
-          // shared: {
-          //   react: {
-          //     singleton: true,
-          //   },
-          //   "react-dom/client": {
-          //     singleton: true,
-          //   },
-          // },
         })
       );
     }
@@ -36,3 +36,4 @@ const nextConfig: NextConfig = {
 };
 
 export default nextConfig;
+```
