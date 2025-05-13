@@ -17,6 +17,7 @@ const VueAppWrapper: React.FC<VueAppWrapperProps> = (props) => {
             message: `Hello from host app, count: ${count}`,
           });
           app.mount(containerRef.current);
+          containerRef.current._vue = app;
         }
       } catch (error) {
         console.error("Failed to load Vue app:", error);

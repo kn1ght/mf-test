@@ -80,7 +80,7 @@ export default defineConfig({
       exposes: {},
       remotes: {
         child_vue_rspack_app:
-          "child_vue_rspack_app@http://localhost:3001/remoteEntry.js",
+          "child_vue_rspack_app@http://localhost:3001/mf-manifest.json",
         child_react_vite_app:
           "child_react_vite_app@http://localhost:3002/mf-manifest.json",
       },

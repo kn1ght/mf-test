@@ -22,6 +22,12 @@ export default defineConfig({
     port: 3001,
     historyApiFallback: true,
     watchFiles: [path.resolve(__dirname, "src")],
+    headers: {
+      "Access-Control-Allow-Origin": "*",
+      "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, PATCH, OPTIONS",
+      "Access-Control-Allow-Headers":
+        "X-Requested-With, content-type, Authorization",
+    },
   },
 
   output: {
@@ -80,6 +86,7 @@ export default defineConfig({
     new ModuleFederationPlugin({
       name: "child_vue_rspack_app",
       filename: "remoteEntry.js",
+      manifest: true,
       exposes: {
         "./VueApp": "./src/mf-loader.ts",
       },
